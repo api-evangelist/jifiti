@@ -51,6 +51,8 @@ apis:
       - type: Documentation
         url: https://www.jifiti.com/lending-api/
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/jifiti
   - type: Website
     url: https://www.jifiti.com
   - type: Portal
