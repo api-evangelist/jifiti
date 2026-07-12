@@ -51,6 +51,10 @@ apis:
       - type: Documentation
         url: https://www.jifiti.com/lending-api/
 common:
+  - type: TrustCenter
+    url: security/jifiti-trust-center.yml
+  - type: DomainSecurity
+    url: security/jifiti-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/jifiti
   - type: Website
@@ -59,6 +63,8 @@ common:
     url: https://www.jifiti.com/api/
   - type: Documentation
     url: https://www.jifiti.com/api/
+  - url: https://www.jifiti.com/news/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

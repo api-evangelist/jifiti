@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://www.jifiti.com/compliance/
+url: https://www.jifiti.com/compliance/
+certifications:
+- SOC 2
+- GDPR
+evidence:
+- source: https://www.jifiti.com/compliance/
+  keywords:
+  - soc2
+  - gdpr
