@@ -32,7 +32,7 @@ created: '2025-02-24'
 modified: '2026-03-16'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/jifiti/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: jifiti:bnpl-api
     name: Jifiti Buy Now Pay Later API
