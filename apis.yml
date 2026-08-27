@@ -25,11 +25,15 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/jifiti.png
 tags:
   - Banking
   - Buy Now Pay Later
+  - Embedded Finance
   - Embedded Lending
   - Fintech
+  - Lending
   - Payments
+  - POS Financing
+  - White Label
 created: '2025-02-24'
-modified: '2026-03-16'
+modified: '2026-08-27'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/jifiti/refs/heads/main/apis.yml
 specificationVersion: '0.23'
@@ -65,8 +69,24 @@ apis:
 common:
   - type: TrustCenter
     url: security/jifiti-trust-center.yml
+  - type: Compliance
+    url: https://www.jifiti.com/compliance/
+  - type: Conformance
+    url: conformance/jifiti-conformance.yml
   - type: DomainSecurity
     url: security/jifiti-domain-security.yml
+  - type: Lifecycle
+    url: lifecycle/jifiti-lifecycle.yml
+  - type: StatusPage
+    url: https://status.jifiti.com
+  - type: Plans
+    url: plans/jifiti-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/jifiti-rate-limits.yml
+  - type: FinOps
+    url: finops/jifiti-finops.yml
+  - type: LLMsTxt
+    url: llms/jifiti-llms.txt
   - type: LinkedIn
     url: https://www.linkedin.com/company/jifiti
   - type: Website
@@ -75,8 +95,40 @@ common:
     url: https://www.jifiti.com/api/
   - type: Documentation
     url: https://www.jifiti.com/api/
+  - type: Support
+    url: https://www.jifiti.com/faq/
+  - type: TermsOfService
+    url: https://www.jifiti.com/terms/
+  - type: PrivacyPolicy
+    url: https://www.jifiti.com/privacy-notice/
   - url: https://www.jifiti.com/news/feed/
     type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+
+x-enrichment:
+  date: '2026-08-27'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: >-
+    Both Jifiti developer hubs are ReadMe.io sites behind a site-wide password —
+    developers.jifiti.com ("CRED API") and lenders.jifiti.com ("jifiti4lenders") 302
+    every path, including /openapi.json and /llms.txt, to /password?redirect=... — and
+    the only way to the password is a "Developer Access Request" form on
+    www.jifiti.com/api/ that asks for company name and job title before granting one of
+    "API for Lenders", "API for Merchants" or "Lending MCP (Alpha)".
+  evidence:
+    - url: https://developers.jifiti.com/openapi.json
+      status: 302
+    - url: https://lenders.jifiti.com/reference
+      status: 302
+    - url: https://api.jifiti.com/openapi.json
+      status: 403
+    - url: https://www.jifiti.com/api/
+      status: 200
+  checked: '2026-08-27'

@@ -1,0 +1,48 @@
+generated: '2026-08-27'
+method: searched
+source: >-
+  Unauthenticated registry searches of npm, PyPI, RubyGems, Packagist, NuGet, crates.io
+  and the GitHub search API on 2026-08-27, plus the public developer pages at
+  https://www.jifiti.com/api/ and https://www.jifiti.com/lending-api/
+note: >-
+  No first-party Jifiti client library exists in any public package registry. Jifiti
+  publishes no GitHub organization (https://api.github.com/orgs/jifiti -> 404); the
+  GitHub repositories that match "jifiti" are individual candidate take-home exercises
+  (JifitiTargil, JifitiTask, JifitiAssignment, jifiti_client), not company-published
+  SDKs, so none are recorded here. Jifiti's developer pages advertise "embeddable
+  widgets" and step-by-step guides but the artifacts themselves sit behind the
+  password-gated ReadMe hubs at developers.jifiti.com / lenders.jifiti.com, so any
+  loader script they ship could not be read or version-pinned. NO SDKs pointer is
+  emitted in apis.yml — this file records a verified absence, not a distribution.
+package_count: 0
+packages: []
+registries_searched:
+  - registry: npm
+    endpoint: https://registry.npmjs.org/-/v1/search?text=jifiti
+    status: 200
+    matches: 0
+  - registry: pypi
+    endpoint: https://pypi.org/pypi/jifiti/json
+    status: 404
+    matches: 0
+  - registry: rubygems
+    endpoint: https://rubygems.org/api/v1/search.json?query=jifiti
+    status: 200
+    matches: 0
+  - registry: packagist
+    endpoint: https://packagist.org/search.json?q=jifiti
+    status: 200
+    matches: 0
+  - registry: nuget
+    endpoint: https://azuresearch-usnc.nuget.org/query?q=jifiti
+    status: 200
+    matches: 0
+  - registry: crates.io
+    endpoint: https://crates.io/api/v1/crates?q=jifiti
+    status: 200
+    matches: 0
+  - registry: github
+    endpoint: https://api.github.com/orgs/jifiti
+    status: 404
+    matches: 0
+    note: no Jifiti GitHub organization exists

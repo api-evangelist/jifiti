@@ -1,0 +1,118 @@
+generated: '2026-08-27'
+method: probed
+source: live GET probes of every Jifiti host found in apis.yml, DNS and CT/DNS enumeration
+note: >-
+  Every /.well-known/ path was probed on all five Jifiti-controlled hosts and NOTHING
+  was served. No document was fetched, so no file was saved and NO WellKnown or
+  SecurityTxt pointer is emitted — this manifest records a verified absence, not a
+  presence. Read the status column carefully: the 200s and 302s below are NOT documents.
+  www.jifiti.com is WordPress and returns an honest HTML 404 body for unknown paths.
+  api.jifiti.com is an AWS API Gateway that answers every path with a 403
+  {"message":"Missing Authentication Token"} — a gateway rejection, not a document.
+  developers.jifiti.com and lenders.jifiti.com are ReadMe.io hubs behind a site-wide
+  password; every path 302s to /password?redirect=... so the 302s are the login wall.
+hit_count: 0
+hosts:
+  - host: https://www.jifiti.com
+    note: WordPress origin; honest HTML 404 for unknown paths (no soft-200 catch-all)
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/oauth-protected-resource
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://api.jifiti.com
+    note: >-
+      AWS API Gateway. Returns 403 {"message":"Missing Authentication Token"} on every
+      path. GET /ping returns 200 "healthy" unauthenticated, which confirms this is a
+      live Jifiti API host, but Jifiti publishes no base URL so it is not wired to an
+      apis[].baseURL — see x-coverage in apis.yml.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/ai-plugin.json
+        status: 403
+      - path: /.well-known/agent-card.json
+        status: 403
+      - path: /.well-known/agent.json
+        status: 403
+  - host: https://developers.jifiti.com
+    note: >-
+      ReadMe.io hub (CNAME ssl.readmessl.com), project title "CRED API", password-gated.
+      Every path 302s to /password?redirect=... — the 302 is the login wall, not a document.
+    documents:
+      - path: /.well-known/security.txt
+        status: 302
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 302
+      - path: /.well-known/agent-card.json
+        status: 302
+      - path: /.well-known/agent.json
+        status: 302
+  - host: https://lenders.jifiti.com
+    note: >-
+      ReadMe.io hub (CNAME jifiti4lenders-c002a992.readmessl.com), password-gated.
+      Same 302 login wall as developers.jifiti.com.
+    documents:
+      - path: /.well-known/security.txt
+        status: 302
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 302
+      - path: /.well-known/agent-card.json
+        status: 302
+      - path: /.well-known/agent.json
+        status: 302
+  - host: https://status.jifiti.com
+    note: Hosted status page; login-gated (302 to /sessions/new). No .well-known surface.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404

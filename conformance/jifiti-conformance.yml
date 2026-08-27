@@ -1,0 +1,82 @@
+generated: '2026-08-27'
+method: searched
+source: https://www.jifiti.com/compliance/
+note: >-
+  Every entry below is read from Jifiti's own published compliance page. Jifiti
+  publishes no machine-readable contract (no OpenAPI, AsyncAPI, GraphQL SDL or WSDL is
+  reachable — see x-coverage in apis.yml), so the technical/cross-cutting standards
+  that are normally derived from a spec cannot be asserted either way and are recorded
+  as unknown rather than false. Do not read "unknown" as "does not conform".
+standards:
+  - id: iso-27001
+    conforms: true
+    evidence: >-
+      "Jifiti's ISO/IEC 27001 certification indicates our compliance with leading
+      international data security and risk management standards" —
+      https://www.jifiti.com/compliance/ ; certificate page
+      https://www.jifiti.com/jifiti-iso-27001-certification/
+  - id: pci-dss
+    conforms: true
+    evidence: >-
+      "Jifiti is PCI/DSS compliant, meaning that all card data is 100% secured through
+      a stringent set of requirements established by the PCI SSC" —
+      https://www.jifiti.com/compliance/
+  - id: soc1-type-ii
+    conforms: true
+    evidence: >-
+      "Jifiti is SOC 1 Type II audited, underscoring the robustness of our internal
+      controls over financial reporting" — https://www.jifiti.com/compliance/
+  - id: soc2-type-ii
+    conforms: true
+    evidence: >-
+      "Jifiti is SOC 2 Type II audited, serving as assurance that Jifiti processes and
+      stores client data in a secure manner" — https://www.jifiti.com/compliance/
+  - id: dora
+    conforms: true
+    evidence: >-
+      "Jifiti's compliance with the Digital Operational Resilience Act (DORA) reaffirms
+      our ability to provide EU banks with secure, regulatory-compliant lending
+      solutions" — https://www.jifiti.com/compliance/
+  - id: eu-us-data-privacy-framework
+    conforms: true
+    evidence: >-
+      "Jifiti is certified under the EU-US Data Privacy Framework and the UK Extension
+      to the EU-US DPF" — https://www.jifiti.com/compliance/
+  - id: gdpr
+    conforms: true
+    evidence: >-
+      Data and Privacy Policy v3.0 and Privacy Notice published at
+      https://www.jifiti.com/privacy-notice/ and
+      https://www.jifiti.com/wp-content/uploads/Data-and-Privacy-Policy-v3.0.pdf ;
+      DPF certification covers EU/UK personal-data transfer
+  - id: emi-licence
+    conforms: true
+    evidence: >-
+      "Jifiti is a Licensed EMI ... As a licensed, regulated e-money issuer" —
+      https://www.jifiti.com/compliance/ ; detail at https://www.jifiti.com/emi/
+    note: >-
+      An EU/UK e-money institution licence. This is a regulatory authorisation, not a
+      technical conformance claim, and it is the reason DORA applies.
+  - id: oauth2
+    conforms: unknown
+    evidence: >-
+      No public securityScheme to read. The API reference is behind the password-gated
+      ReadMe hubs at developers.jifiti.com and lenders.jifiti.com.
+  - id: rfc9457-problem-details
+    conforms: unknown
+    evidence: no public contract or error reference to inspect
+  - id: psd2
+    conforms: unknown
+    evidence: >-
+      Jifiti holds an EMI licence and operates in the EU, so PSD2/EMD2 obligations are
+      plausible, but Jifiti makes no PSD2 conformance claim on any public page and no
+      contract is published to check for a Berlin Group / OBIE shape. Not asserted.
+domain_standards:
+  checked: true
+  found: []
+  note: >-
+    A domain-standard signature must be read out of the contract itself (an ISO 20022
+    message type, an FDX resource shape, a Berlin Group NextGenPSD2 path). Jifiti
+    publishes no contract, so no domain standard could be confirmed or ruled out.
+    This is reward-only in the rubric: recording nothing here is the correct outcome,
+    not a penalty. Re-run this check if the developer portal is ever opened.

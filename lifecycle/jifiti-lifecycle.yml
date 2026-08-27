@@ -1,0 +1,62 @@
+generated: '2026-08-27'
+method: probed
+source: >-
+  live probes of https://status.jifiti.com, https://api.jifiti.com and the public
+  Jifiti developer pages on 2026-08-27
+note: >-
+  Jifiti publishes no versioning policy, no deprecation policy, no Sunset/Deprecation
+  header commitment and no public SLA. Those surfaces would live inside the ReadMe
+  developer hubs, which are password-gated, so their absence here is an absence of
+  PUBLIC evidence rather than a proven absence of policy. The one lifecycle surface
+  that is verifiably operated is the hosted status page.
+status_page: https://status.jifiti.com
+status_page_detail:
+  url: https://status.jifiti.com
+  http_status: 200
+  access: login-required
+  evidence: >-
+    GET https://status.jifiti.com returns 200 and lands on
+    https://status.jifiti.com/sessions/new — a hosted status page on Jifiti's own
+    host, gated behind a customer login. The page is real and Jifiti-operated; it is
+    simply not readable without an account.
+versioning:
+  scheme: unknown
+  current: null
+  docs: null
+  note: >-
+    No public versioning policy. api.jifiti.com rejects unauthenticated paths with an
+    AWS API Gateway 403, so no version prefix could be observed; GET
+    https://api.jifiti.com/ping returns 200 "healthy" and is the only unauthenticated
+    response the host gives.
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: >-
+    No deprecation or sunset policy is published on any reachable Jifiti page. NO
+    Deprecation pointer is emitted in apis.yml.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No public SLA. Jifiti's developer pages describe the API as "fast, secure &
+    stable" but state no numeric uptime commitment, which is marketing copy, not an SLA.
+changelog:
+  url: null
+  note: >-
+    No dated changelog or release-notes page exists on the public site. /news/ and
+    /blog/ are company news and marketing, not API release notes, so no ChangeLog
+    artifact or pointer is emitted.
+deprecated_operations: []
+evidence:
+  - url: https://status.jifiti.com
+    status: 200
+    finding: redirects to /sessions/new — hosted status page behind a customer login
+  - url: https://api.jifiti.com/ping
+    status: 200
+    finding: 'body "healthy" — live unauthenticated health endpoint'
+  - url: https://api.jifiti.com/
+    status: 403
+    finding: '{"message":"Missing Authentication Token"} — AWS API Gateway'
+  - url: https://www.jifiti.com/pricing/
+    status: 404
+    finding: no public pricing or plan page exists

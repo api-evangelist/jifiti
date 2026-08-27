@@ -1,0 +1,38 @@
+generated: '2026-08-27'
+method: searched
+source: https://www.jifiti.com/api/
+status: announced-gated
+note: >-
+  Jifiti advertises a "Lending MCP (Alpha)" but publishes no endpoint. The only public
+  evidence is a select option in the Developer Access Request form served on
+  https://www.jifiti.com/api/ and https://www.jifiti.com/lending-api/, whose three
+  choices are "API for Lenders", "API for Merchants" and "Lending MCP (Alpha)".
+  There is no documented MCP URL, no install command, no package, and no reachable
+  server; access is granted only after the request form is approved. NO MCPServer
+  pointer is emitted in apis.yml, because a pointer would assert an agent surface that
+  no agent can reach today. No tool list was derived either: Jifiti publishes no
+  OpenAPI to derive one from, and inventing tool names would fabricate the contract.
+  Re-check this file once portal access is obtained — the alpha may have shipped.
+evidence:
+  - url: https://www.jifiti.com/api/
+    status: 200
+    finding: >-
+      form field name="portal" with option value="Lending MCP (Alpha)"
+  - url: https://www.jifiti.com/lending-api/
+    status: 200
+    finding: >-
+      same Developer Access Request form and same "Lending MCP (Alpha)" option
+  - url: https://www.jifiti.com/ai-for-lending/
+    status: 200
+    finding: >-
+      describes "agentic lending" and an "AI-ready orchestration layer" but names no
+      MCP server, endpoint or agent-facing URL
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
+  note: >-
+    mode is none because Jifiti ships nothing an MCP client can connect to. This is
+    NOT a derived candidate — the provider does have an MCP program, it is in gated
+    alpha with no published endpoint or package.
+tools: []

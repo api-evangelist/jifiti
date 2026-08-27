@@ -1,13 +1,72 @@
-generated: '2026-07-11'
+generated: '2026-08-27'
 method: searched
 probe: true
 source: https://www.jifiti.com/compliance/
 url: https://www.jifiti.com/compliance/
+note: >-
+  Upgraded 2026-08-27 by reading the full compliance page text. The prior pass captured
+  only SOC 2 and GDPR; Jifiti in fact names ISO/IEC 27001, PCI DSS, SOC 1 Type II,
+  SOC 2 Type II, DORA and EU-US Data Privacy Framework (with the UK Extension) on the
+  same page, and holds an EMI licence. There is no trust.jifiti.com (404) — the
+  compliance page IS the trust surface.
 certifications:
-- SOC 2
-- GDPR
+  - ISO/IEC 27001
+  - PCI DSS
+  - SOC 1 Type II
+  - SOC 2 Type II
+  - DORA
+  - EU-US Data Privacy Framework (incl. UK Extension)
+  - GDPR
+regulatory:
+  - id: emi-licence
+    label: Licensed E-Money Institution
+    url: https://www.jifiti.com/emi/
+    evidence: >-
+      "Jifiti is a Licensed EMI. As a licensed, regulated e-money issuer, we're able to
+      serve the growing needs of our bank, lender, financial services and merchant
+      clients with a broader scope of payment products and services."
+policies:
+  - label: Terms, Conditions and Privacy Policies
+    url: https://www.jifiti.com/jifiti-terms-conditions-and-privacy-policies/
+    status: 200
+  - label: Terms
+    url: https://www.jifiti.com/terms/
+    status: 200
+  - label: Privacy Notice
+    url: https://www.jifiti.com/privacy-notice/
+    status: 200
+  - label: Data and Privacy Policy v3.0 (PDF)
+    url: https://www.jifiti.com/wp-content/uploads/Data-and-Privacy-Policy-v3.0.pdf
+    status: 200
+  - label: Cookies Policy
+    url: https://www.jifiti.com/cookies/
+    status: 200
+  - label: ISO 27001 certification page
+    url: https://www.jifiti.com/jifiti-iso-27001-certification/
+    status: 200
+compliance_team_published: true
+vulnerability_disclosure:
+  present: false
+  note: >-
+    No security.txt on any Jifiti host, no /security, /responsible-disclosure or
+    /vulnerability-disclosure page (all 404), and no HackerOne/Bugcrowd/Intigriti
+    program was found. Jifiti names a Global Head of Compliance & Privacy and a
+    Corporate Compliance Officer on the compliance page but publishes no security
+    contact address. NO Security or VulnerabilityDisclosure pointer is emitted.
 evidence:
-- source: https://www.jifiti.com/compliance/
-  keywords:
-  - soc2
-  - gdpr
+  - source: https://www.jifiti.com/compliance/
+    status: 200
+    keywords:
+      - iso/iec 27001
+      - pci/dss
+      - soc 1 type ii
+      - soc 2 type ii
+      - dora
+      - eu-us data privacy framework
+      - licensed emi
+  - source: https://trust.jifiti.com
+    status: 404
+    keywords: []
+  - source: https://www.jifiti.com/security/
+    status: 404
+    keywords: []

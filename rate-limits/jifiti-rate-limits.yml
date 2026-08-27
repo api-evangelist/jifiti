@@ -4,10 +4,15 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Jifiti
 providerId: jifiti
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-08-27'
+generated: '2026-08-27'
+method: searched
+source: https://www.jifiti.com/api/
+# REPLACED 2026-08-27. The previous contents were an API Evangelist bulk scaffold dated
+# 2026-05-04 (roadmap#35) asserting five per-tier limits (10/100/1000 rpm), burst
+# ceilings, X-RateLimit-* response headers and a 429/503 code map. Jifiti publishes NONE
+# of that. Inventing rate-limit headers is specifically harmful: an agent would build
+# backoff against signals the API does not send. The fabricated values are removed.
 tags:
   - Banking
   - Buy Now Pay Later
@@ -15,83 +20,36 @@ tags:
   - Fintech
   - Payments
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Jifiti API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
-  with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Jifiti Buy Now Pay Later API
-      - Jifiti Embedded Lending API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Jifiti Buy Now Pay Later API
-      - Jifiti Embedded Lending API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Jifiti Buy Now Pay Later API
-      - Jifiti Embedded Lending API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Jifiti Buy Now Pay Later API
-      - Jifiti Embedded Lending API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Jifiti Buy Now Pay Later API
-      - Jifiti Embedded Lending API
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+description: >-
+  Jifiti documents no rate limits publicly. The API reference that would carry them
+  lives inside two password-gated ReadMe hubs (developers.jifiti.com,
+  lenders.jifiti.com), and the API host api.jifiti.com rejects every unauthenticated
+  path with an AWS API Gateway 403, so no live RateLimit-* or X-RateLimit-* response
+  header could be observed either. limit_count is an honest zero: nothing was published
+  and nothing was observable.
+limit_count: 0
+limits: []
+headers: {}
+headers_observed: false
+responseCodes: {}
+policies: []
+evidence:
+  - url: https://api.jifiti.com/
+    status: 403
+    finding: >-
+      '{"message":"Missing Authentication Token"}' — no RateLimit-*, X-RateLimit-* or
+      Retry-After header present on the response
+  - url: https://api.jifiti.com/ping
+    status: 200
+    finding: >-
+      body "healthy"; response carries no rate-limit headers, so no runtime signal
+      could be captured
+  - url: https://developers.jifiti.com/reference
+    status: 302
+    finding: redirects to /password — reference (and any published limits) is gated
+  - url: https://lenders.jifiti.com/reference
+    status: 302
+    finding: redirects to /password — same gate on the lender hub
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
