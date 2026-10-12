@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/jifiti/integrations
+- https://n8n.io/integrations/jifiti/
+- https://composio.dev/toolkits/jifiti
+- https://monid.ai/tools/jifiti
+checked:
+- https://composio.dev/toolkits/jifiti
+- https://monid.ai/tools/jifiti
+- https://n8n.io/integrations/jifiti/
+- https://zapier.com/apps/jifiti/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
