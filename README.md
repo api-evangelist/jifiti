@@ -1,4 +1,4 @@
-# Jifiti (jifiti)
+# Jifiti
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,61 +66,108 @@
 
 Through our white-labeled platform, banks and lenders embed their loans at any point of sale, giving merchants access to the most competitive business and consumer loan programs from lenders their customers trust. Jifiti provides a fast, secure, and stable API for embedded lending and Buy Now Pay Later solutions.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/jifiti/refs/heads/main/apis.yml)
+**Areas:** Banking · Buy Now Pay Later · Embedded Finance · Embedded Lending · Fintech · Lending · Payments · POS Financing · White Label
 
-## Scope
+## Jifiti on APIs.io
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+Everything profiled for Jifiti is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/jifiti/](https://apis.io/providers/jifiti/)** — or go straight to one of the APIs or properties below.
 
-## Tags:
+### APIs (2)
 
- - Buy Now Pay Later, Embedded Lending, Payments, Fintech, Banking
+- [Jifiti Buy Now Pay Later API](https://apis.io/apis/jifiti/bnpl-api/) — Jifiti's Buy Now Pay Later API enables merchants and lenders to offer split payment and consumer financing options, including one-time loans and revolving…
+- [Jifiti Embedded Lending API](https://apis.io/apis/jifiti/lending-api/) — Jifiti's Embedded Lending API for banks and lenders provides detailed guides and component diagrams to help map lending solutions with the Jifiti platform.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-24 
-- **Modified:** 2026-03-16 
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (2)
 
-### Jifiti Buy Now Pay Later API
-Jifiti's Buy Now Pay Later API enables merchants and lenders to offer split payment and consumer financing options, including one-time loans and revolving lines of credit.
+Authentication, trust centre, and vulnerability disclosure.
 
-**Human URL:** [https://www.jifiti.com/api/](https://www.jifiti.com/api/)
+- [Jifiti Domain Security](https://apis.io/security/jifiti/jifiti-domain-security/)
+- [Jifiti Trust Center](https://apis.io/security/jifiti/jifiti-trust-center/)
 
+#### Plans and pricing (1)
 
-#### Tags:
+Published plans, tiers and prices.
 
- - Buy Now Pay Later, Payments, Consumer Financing
+- [Jifiti Plans Pricing](https://apis.io/plans/jifiti/jifiti-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [Documentation](https://www.jifiti.com/api/)
+Published request limits.
 
-### Jifiti Embedded Lending API
-Jifiti's Embedded Lending API for banks and lenders provides detailed guides and component diagrams to help map lending solutions with the Jifiti platform.
+- [Jifiti Rate Limits](https://apis.io/rate-limits/jifiti/jifiti-rate-limits/)
 
-**Human URL:** [https://www.jifiti.com/lending-api/](https://www.jifiti.com/lending-api/)
+#### FinOps (1)
 
+What the API costs to run, by operation.
 
-#### Tags:
+- [Jifiti Finops](https://apis.io/finops/jifiti/jifiti-finops/)
 
- - Embedded Lending, Banking, Lenders
+## Where to find this API
 
-#### Properties
-
-- [Documentation](https://www.jifiti.com/lending-api/)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.jifiti.com)
-- [Portal](https://www.jifiti.com/api/)
 - [Documentation](https://www.jifiti.com/api/)
+- [Support](https://www.jifiti.com/faq/)
+- [Blog](https://www.jifiti.com/news/feed/)
+- [Compliance](https://www.jifiti.com/compliance/)
+- [Terms of service](https://www.jifiti.com/terms/)
+- [Privacy policy](https://www.jifiti.com/privacy-notice/)
+- [Status](https://status.jifiti.com)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 23.0** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 36.8 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.9** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/jifiti/](https://apis.io/providers/jifiti/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Jifiti: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/jifiti/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
